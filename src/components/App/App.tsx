@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
-import '../index.css';
-import ErrorMessage from './ErrorMessage/ErrorMessage';
-import ImageGallery from './ImageGallary/ImageGallery';
-import ImageModal from './ImageModal/ImageModal';
-import Loader from './Loader/Loader';
-import LoadMoreBtn from './LoadMoreBtn/LoadMoreBtn';
-import SearchBar from './SearchBar/SearchBar';
-import { fetchImages } from '../services/API';
+import '../../index.css';
 import Modal from 'react-modal';
 import toast from 'react-hot-toast';
+import SearchBar from '../SearchBar/SearchBar';
+import Loader from '../Loader/Loader';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import ImageGallery from '../ImageGallary/ImageGallery';
+import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
+import ImageModal from '../ImageModal/ImageModal';
 
 const customStyles = {
   content: {
