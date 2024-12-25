@@ -1,0 +1,16 @@
+.galleryList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.galleryItem {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background-color: rgba(240, 193, 145, 0.995);
+}

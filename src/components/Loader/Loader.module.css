@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top {
+  margin: 20px auto;
+}
+
+.bottom {
+  margin: 10px auto 40px;
+}
