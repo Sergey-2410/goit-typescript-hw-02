@@ -25,7 +25,6 @@ export interface ImageCardProps {
 export interface ModalProps {
   stateIsOpen: boolean;
   closeModal: () => void;
-  style: Record<string, any>;
   image: string;
 }
 

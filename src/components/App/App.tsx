@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import '../../index.css';
-import Modal from 'react-modal';
 import toast from 'react-hot-toast';
 import SearchBar from '../SearchBar/SearchBar';
 import Loader from '../Loader/Loader';
@@ -11,23 +10,6 @@ import ImageModal from '../ImageModal/ImageModal';
 import { Image } from './App.types';
 import { fetchImages } from '../../services/API';
 
-const customStyles: Record<string, any> = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    maxWidth: '90vw',
-    maxHeight: '90vh',
-    transform: 'translate(-50%, -50%)',
-    overlay: {
-      background: 'rgba(30, 30, 30, 0.9)',
-    },
-  },
-};
-
-Modal.setAppElement('#root');
 const App = () => {
   const [images, setImages] = useState<Image[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -103,7 +85,6 @@ const App = () => {
         <ImageModal
           stateIsOpen={modalIsOpen}
           closeModal={closeModal}
-          style={customStyles}
           image={selectImage}
         />
       )}
