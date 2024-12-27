@@ -16,6 +16,7 @@ createRoot(document.getElementById('root') as HTMLElement).render(
         // Define default options
         className: '',
         duration: 5000,
+
         style: {
           background: '#363636',
           color: '#fff',
@@ -24,9 +25,9 @@ createRoot(document.getElementById('root') as HTMLElement).render(
         // Default options for specific types
         success: {
           duration: 5000,
-          theme: {
-            primary: 'green',
-            secondary: 'black',
+          style: {
+            background: 'green',
+            color: 'white',
           },
         },
       }}
