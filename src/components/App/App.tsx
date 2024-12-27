@@ -8,8 +8,10 @@ import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import ImageGallery from '../ImageGallary/ImageGallery';
 import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
 import ImageModal from '../ImageModal/ImageModal';
+import { Image } from './App.types';
+import { fetchImages } from '../../services/API';
 
-const customStyles = {
+const customStyles: Record<string, any> = {
   content: {
     top: '50%',
     left: '50%',
@@ -24,18 +26,19 @@ const customStyles = {
     },
   },
 };
+
 Modal.setAppElement('#root');
 const App = () => {
-  const [images, setImages] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-  const [query, setQuery] = useState('');
-  const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [selectImage, setSelectImage] = useState('');
+  const [images, setImages] = useState<Image[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
+  const [query, setQuery] = useState<string>('');
+  const [page, setPage] = useState<number>(1);
+  const [totalPages, setTotalPages] = useState<number>(1);
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
+  const [selectImage, setSelectImage] = useState<string>('');
 
-  const openModal = image => {
+  const openModal = (image: string): void => {
     setSelectImage(image);
     setModalIsOpen(true);
   };
@@ -69,7 +72,7 @@ const App = () => {
     getData();
   }, [query, page]);
 
-  const handleQuery = query => {
+  const handleQuery = (query: string): void => {
     if (query.trim() === '') {
       toast.dismiss();
       toast.error('Error, the search field cannot be empty!');

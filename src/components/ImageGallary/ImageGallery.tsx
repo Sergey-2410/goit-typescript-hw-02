@@ -1,6 +1,8 @@
 import ImageCard from '../ImageCard/ImageCard';
 import s from './ImageGallery.module.css';
-const ImageGallery = ({ images, modal }) => {
+import { ImagesModalProps } from '../App/App.types';
+
+const ImageGallery: React.FC<ImagesModalProps> = ({ images, modal }) => {
   return (
     <div>
       <ul className={s.galleryList}>
@@ -26,9 +28,3 @@ const ImageGallery = ({ images, modal }) => {
   );
 };
 export default ImageGallery;
-{
-  /* <p>
-                Description:
-                {image.description ? image.description : image.alt_description}
-              </p> */
-}
